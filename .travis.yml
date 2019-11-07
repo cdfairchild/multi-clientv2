@@ -9,8 +9,7 @@ before_install:
 script:
   - docker run -e CI=true cdfairchild/react-test npm test
 
-
-after_sucess:
+after_success:
   - docker build -t cdfairchild/multi-client ./client 
   - docker build -t cdfairchild/multi-nginx ./nginx 
   - docker build -t cdfairchild/multi-server ./server 
