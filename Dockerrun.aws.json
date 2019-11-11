@@ -1,0 +1,36 @@
+{
+  "AWSEBDockerrunVersion": 2, 
+  "containerDefinitions": [
+    {
+      "name": "client",
+      "image": "cdfairchild/multi-client",
+      "hostname": "client",
+      "essential": false
+    },
+    {
+      "name": "server",
+      "image": "cdfairchild/multi-server",
+      "hostname": "api",
+      "essential": false
+    },
+    {
+      "name": "worker",
+      "image": "cdfairchild/multi-worker",
+      "hostname": "worker",
+      "essential": false
+    },
+    {
+      "name": "nginx",
+      "image": "cdfairchild/multi-nginx",
+      "hostname": "nginx",
+      "essential": true,
+      "portMappings": [
+          {
+            "hostPort": "80",
+            "containerPort": "80"
+          }
+      ],
+      "links": ["client", "server"]
+    }
+  ]
+}
