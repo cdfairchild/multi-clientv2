@@ -26,7 +26,7 @@ class App extends Component {
 
             <img src={logo} className="App-logo" alt="logo" />
 
-            <h1 className="App-title">Fib Calculator v1.1!</h1>
+            <h1 className="App-title">Fib Calculator v1.2!</h1>
 
             <Link to="/">Home</Link>
 
